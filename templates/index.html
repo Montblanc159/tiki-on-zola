@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="slider" id="home-slider">
+        <ul class="slides">
+            <li>
+                <img src="/banner.jpg" alt="Bannière"> <!-- random image -->
+                <div class="caption left-align">
+                    <h1>TiKi au service de vos animaux</h1>
+                    <h4 class="light grey-text text-lighten-3">Promenades, visites à domicile et taxi animalier à Rennes
+                        et ses alentours</h4>
+                </div>
+            </li>
+        </ul>
+        <a href="#prestations" class="scroll-to"><i class="material-icons">expand_more</i></a>
+    </div>
+    <div class="container">
+        <div id="prestations">
+            <h2 class="white-text center">Nos prestations</h2>
+            <div class="row presta">
+                <div class="col s12 m4 center">
+                    <div class="card">
+                        <div class="card-content">
+                            <a href="/services#walks">
+                                <div class="promo valign-wrapper hoverable">
+                                    <i class="large material-icons">terrain</i>
+                                </div>
+                            </a>
+                            <p class="subtitle">Promenade</p>
+                            <p>Un emploi du temps chargé ? Une absence prolongée ? Je viens à votre domicile pour
+                                promener
+                                votre loulou.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 center">
+                    <div class="card">
+                        <div class="card-content">
+                            <a href="/services#home">
+                                <div class="promo valign-wrapper hoverable">
+                                    <i class="large material-icons">home</i>
+                                </div>
+                            </a>
+                            <p class="subtitle">Garde à domicile</p>
+                            <p>Vous partez quelques jours et avez besoin de quelqu’un pour nourrir et soigner vos
+                                boules de
+                                poils ou boules de plumes ? Je suis là !</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 center">
+                    <div class="card">
+                        <div class="card-content">
+                            <a href="/services#taxi">
+                                <div class="promo valign-wrapper hoverable">
+                                    <i class="large material-icons">directions_car</i>
+                                </div>
+                            </a>
+                            <p class="subtitle">Taxi animalier</p>
+                            <p>Un trajet avec votre compagnon vous pose des problèmes logistiques ? Je vous propose
+                                un
+                                service de taxi animalier.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row center">
+                <a class="waves-effect waves-light btn" href="/services">
+                    <i class="material-icons left">pets</i>
+                    En savoir plus
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2 class="center">Nos actus</h2>
+            <p class="center"><em>Trucs et astuces, conseils et actualités.</em></p>
+            {% set section = get_section(path="articles/_index.md") %}
+
+            {% for post in section.pages %}
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">{{post.title}}</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{post.permalink}}">Lire</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="row center">
+                <a class="waves-effect waves-light btn" href="/articles">
+                    <i class="material-icons left">description</i>
+                    Voir tous les articles
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <article class="container">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                {{ page.content | safe }}
+            </div>
+        </div>
+        <div class="row center">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://tikiservices.fr/articles/quelques-occupations-pour-le-confinement"
+                class="btn waves-effect waves-light" target="_blank">
+                <i class="material-icons left">share</i>
+                Partager sur Facebook
+            </a>
+        </div>
+        <div class="row center">
+            <a class="btn waves-effect waves-light" href="/articles">
+                <i class="material-icons left">arrow_back_ios</i>
+                Retour aux articles
+            </a>
+        </div>
+    </article>
+</main>
+{% endblock content %}
